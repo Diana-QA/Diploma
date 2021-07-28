@@ -4,6 +4,8 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import ru.netology.web.data.DataHelper;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
@@ -11,13 +13,13 @@ import static com.codeborne.selenide.Selenide.$$;
 public class PaymentPage {
     private final SelenideElement cardNumber = $("[placeholder='0000 0000 0000 0000']");
     private final SelenideElement monthField = $("[placeholder='08']");
-    private final SelenideElement yearField = $("placeholder='22'");
-    private final SelenideElement ownerField = $$(".input__control").find(Condition.exactText("Владелец"));
+    private final SelenideElement yearField = $("[placeholder='22']");
+    private final SelenideElement ownerField = $("fieldset > div:nth-child(3) > span > span:nth-child(1) > span > span > span.input__box > input");
     private final SelenideElement cvcField = $("[placeholder='999']");
     private final SelenideElement button = $$(".button").find(Condition.exactText("Продолжить"));
 
-    private final SelenideElement successNotification = $(byText("Операция одобрена Банком."));
-    private final SelenideElement errorNotification = $(byText("Ошибка! Банк отказал в проведении операции."));
+    private final SelenideElement successNotification = $(".notification_status_ok");
+    private final SelenideElement errorNotification = $(".notification_status_error");
     private final SelenideElement wrongFormat = $(byText("Неверный формат"));
     private final SelenideElement invalidCardExpirationDate = $(byText("Неверно указан срок действия карты"));
     private final SelenideElement cardExpired = $(byText("Истёк срок действия карты"));
@@ -33,11 +35,11 @@ public class PaymentPage {
     }
 
     public void successNotification() {
-        successNotification.shouldBe(Condition.visible);
+        successNotification.shouldBe(Condition.visible, Duration.ofSeconds(15));
     }
 
     public void errorNotification() {
-        errorNotification.shouldBe(Condition.visible);
+        errorNotification.shouldBe(Condition.visible, Duration.ofSeconds(15));
     }
 
     public void wrongFormat() {
