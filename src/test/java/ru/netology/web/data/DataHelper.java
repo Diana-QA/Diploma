@@ -82,7 +82,7 @@ public class DataHelper {
 
     public static String getValidOwner() {
         Faker faker = new Faker(new Locale("en"));
-        return faker.name().firstName() + "" + faker.name().lastName();
+        return faker.name().firstName() + " " + faker.name().lastName();
     }
 
     public static String getChineseOwner() {
