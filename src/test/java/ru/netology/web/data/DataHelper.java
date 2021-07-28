@@ -49,10 +49,10 @@ public class DataHelper {
     }
 
     public static String getLastMonth() {
-        return LocalDate.now().minusMonths(1).format(DateTimeFormatter.ofPattern("MM"));
+        return LocalDate.now().minusMonths(3).format(DateTimeFormatter.ofPattern("MM"));
     }
 
-    public static String getIncorrectMonth() {
+    public static String getInvalidMonth() {
         return "13";
     }
 
@@ -67,7 +67,7 @@ public class DataHelper {
     }
 
     public static String getPlusYear() {
-        return LocalDate.now().plusYears(1).format(DateTimeFormatter.ofPattern("yy"));
+        return LocalDate.now().plusYears(7).format(DateTimeFormatter.ofPattern("yy"));
     }
 
     public static String getMinusYear() {
