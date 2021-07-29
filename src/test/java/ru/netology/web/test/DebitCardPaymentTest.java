@@ -9,10 +9,12 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.web.data.DataHelper;
+import ru.netology.web.data.SqlHelper;
 import ru.netology.web.page.DashboardPage;
 import ru.netology.web.page.PaymentPage;
 
 import static com.codeborne.selenide.Selenide.open;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class DebitCardPaymentTest {
@@ -31,6 +33,7 @@ public class DebitCardPaymentTest {
     @AfterAll
     static void tearDownAll() {
         SelenideLogger.removeListener("allure");
+        SqlHelper.deleteTables();
     }
 
     // POSITIVE SCENARIOS
@@ -45,8 +48,10 @@ public class DebitCardPaymentTest {
         val year = DataHelper.getCorrectYear();
         val owner = DataHelper.getValidOwner();
         val cvc = DataHelper.getCorrectCVC();
+        val paymentStatus = SqlHelper.getStatusPaymentEntity();
         paymentPage.PaymentFormat(cardNumber, month, year, owner, cvc);
         paymentPage.successNotification();
+        assertEquals("APPROVED", paymentStatus);
     }
 
     @Test
@@ -59,8 +64,10 @@ public class DebitCardPaymentTest {
         val year = DataHelper.getCorrectYear();
         val owner = DataHelper.getValidOwner();
         val cvc = DataHelper.getCorrectCVC();
+        val paymentStatus = SqlHelper.getStatusPaymentEntity();
         paymentPage.PaymentFormat(cardNumber, month, year, owner, cvc);
         paymentPage.successNotification();
+        assertEquals("DECLINED", paymentStatus);
     }
 
     @Test
