@@ -34,7 +34,7 @@ public class SqlHelper {
     public static String getStatusCreditRequestEntity() {
         try (val conn = getConnection();
             val countStmt = conn.createStatement()) {
-            val sql = "SELECT status FROM credit_request_entity ORDER BY created DESC LIMIT 1";
+            val sql = "SELECT status FROM credit_request_entity ORDER BY created DESC LIMIT 1;";
             val resultSet = countStmt.executeQuery(sql);
             if (resultSet.next()) {
                 return resultSet.getString("status");
@@ -47,7 +47,7 @@ public class SqlHelper {
     public static String getStatusPaymentEntity() {
         try (val conn = getConnection();
              val countStmt = conn.createStatement()) {
-            val sql = "SELECT status FROM payment_entity ORDER BY created DESC LIMIT 1";
+            val sql = "SELECT status FROM payment_entity ORDER BY created DESC LIMIT 1;";
             val resultSet = countStmt.executeQuery(sql);
             if (resultSet.next()) {
                 return resultSet.getString("status");
