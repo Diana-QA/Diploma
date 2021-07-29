@@ -45,7 +45,7 @@ public class DebitCardPaymentTest {
         val year = DataHelper.getCorrectYear();
         val owner = DataHelper.getValidOwner();
         val cvc = DataHelper.getCorrectCVC();
-        paymentPage.validPaymentFormat(cardNumber, month, year, owner, cvc);
+        paymentPage.PaymentFormat(cardNumber, month, year, owner, cvc);
         paymentPage.successNotification();
     }
 
@@ -59,7 +59,7 @@ public class DebitCardPaymentTest {
         val year = DataHelper.getCorrectYear();
         val owner = DataHelper.getValidOwner();
         val cvc = DataHelper.getCorrectCVC();
-        paymentPage.validPaymentFormat(cardNumber, month, year, owner, cvc);
+        paymentPage.PaymentFormat(cardNumber, month, year, owner, cvc);
         paymentPage.successNotification();
     }
 
@@ -73,7 +73,7 @@ public class DebitCardPaymentTest {
         val year = DataHelper.getCorrectYear();
         val owner = DataHelper.getRussianOwner();
         val cvc = DataHelper.getCorrectCVC();
-        paymentPage.validPaymentFormat(cardNumber, month, year, owner, cvc);
+        paymentPage.PaymentFormat(cardNumber, month, year, owner, cvc);
         paymentPage.successNotification();
     }
 
@@ -87,7 +87,7 @@ public class DebitCardPaymentTest {
         val year = DataHelper.getCorrectYear();
         val owner = DataHelper.getChineseOwner();
         val cvc = DataHelper.getCorrectCVC();
-        paymentPage.validPaymentFormat(cardNumber, month, year, owner, cvc);
+        paymentPage.PaymentFormat(cardNumber, month, year, owner, cvc);
         paymentPage.successNotification();
     }
 
@@ -103,7 +103,7 @@ public class DebitCardPaymentTest {
         val year = DataHelper.getCorrectYear();
         val owner = DataHelper.getValidOwner();
         val cvc = DataHelper.getCorrectCVC();
-        paymentPage.validPaymentFormat(cardNumber, month, year, owner, cvc);
+        paymentPage.PaymentFormat(cardNumber, month, year, owner, cvc);
         paymentPage.errorNotification();
     }
 
@@ -117,7 +117,7 @@ public class DebitCardPaymentTest {
         val year = DataHelper.getCorrectYear();
         val owner = DataHelper.getValidOwner();
         val cvc = DataHelper.getCorrectCVC();
-        paymentPage.validPaymentFormat(cardNumber, month, year, owner, cvc);
+        paymentPage.PaymentFormat(cardNumber, month, year, owner, cvc);
         paymentPage.wrongFormat();
     }
 
@@ -131,7 +131,7 @@ public class DebitCardPaymentTest {
         val year = DataHelper.getCorrectYear();
         val owner = DataHelper.getValidOwner();
         val cvc = DataHelper.getCorrectCVC();
-        paymentPage.validPaymentFormat(cardNumber, month, year, owner, cvc);
+        paymentPage.PaymentFormat(cardNumber, month, year, owner, cvc);
         paymentPage.invalidCardExpirationDate();
     }
 
@@ -145,7 +145,7 @@ public class DebitCardPaymentTest {
         val year = DataHelper.getMinusYear();
         val owner = DataHelper.getValidOwner();
         val cvc = DataHelper.getCorrectCVC();
-        paymentPage.validPaymentFormat(cardNumber, month, year, owner, cvc);
+        paymentPage.PaymentFormat(cardNumber, month, year, owner, cvc);
         paymentPage.cardExpired();
     }
 
@@ -159,7 +159,7 @@ public class DebitCardPaymentTest {
         val year = DataHelper.getPlusYear();
         val owner = DataHelper.getValidOwner();
         val cvc = DataHelper.getCorrectCVC();
-        paymentPage.validPaymentFormat(cardNumber, month, year, owner, cvc);
+        paymentPage.PaymentFormat(cardNumber, month, year, owner, cvc);
         paymentPage.invalidCardExpirationDate();
     }
 
@@ -173,7 +173,7 @@ public class DebitCardPaymentTest {
         val year = DataHelper.getCorrectYear();
         val owner = DataHelper.getInvalidOwner();
         val cvc = DataHelper.getCorrectCVC();
-        paymentPage.validPaymentFormat(cardNumber, month, year, owner, cvc);
+        paymentPage.PaymentFormat(cardNumber, month, year, owner, cvc);
         paymentPage.wrongFormat();
     }
 
@@ -187,7 +187,7 @@ public class DebitCardPaymentTest {
         val year = DataHelper.getCorrectYear();
         val owner = DataHelper.getValidOwner();
         val cvc = DataHelper.getIncorrectCVC();
-        paymentPage.validPaymentFormat(cardNumber, month, year, owner, cvc);
+        paymentPage.PaymentFormat(cardNumber, month, year, owner, cvc);
         paymentPage.wrongFormat();
     }
 
@@ -201,7 +201,7 @@ public class DebitCardPaymentTest {
         val year = DataHelper.getEmptyYear();
         val owner = DataHelper.getEmptyOwner();
         val cvc = DataHelper.getEmptyCVC();
-        paymentPage.validPaymentFormat(cardNumber, month, year, owner, cvc);
+        paymentPage.PaymentFormat(cardNumber, month, year, owner, cvc);
         paymentPage.wrongFormat();
         paymentPage.emptyField();
     }
