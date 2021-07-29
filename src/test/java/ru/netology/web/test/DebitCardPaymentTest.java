@@ -30,12 +30,6 @@ public class DebitCardPaymentTest {
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
-    @AfterAll
-    static void tearDownAll() {
-        SelenideLogger.removeListener("allure");
-        SqlHelper.deleteTables();
-    }
-
     // POSITIVE SCENARIOS
 
     @Test
@@ -48,9 +42,9 @@ public class DebitCardPaymentTest {
         val year = DataHelper.getCorrectYear();
         val owner = DataHelper.getValidOwner();
         val cvc = DataHelper.getCorrectCVC();
-        val paymentStatus = SqlHelper.getStatusPaymentEntity();
         paymentPage.PaymentFormat(cardNumber, month, year, owner, cvc);
         paymentPage.successNotification();
+        val paymentStatus = SqlHelper.getStatusPaymentEntity();
         assertEquals("APPROVED", paymentStatus);
     }
 
@@ -64,9 +58,9 @@ public class DebitCardPaymentTest {
         val year = DataHelper.getCorrectYear();
         val owner = DataHelper.getValidOwner();
         val cvc = DataHelper.getCorrectCVC();
-        val paymentStatus = SqlHelper.getStatusPaymentEntity();
         paymentPage.PaymentFormat(cardNumber, month, year, owner, cvc);
         paymentPage.successNotification();
+        val paymentStatus = SqlHelper.getStatusPaymentEntity();
         assertEquals("DECLINED", paymentStatus);
     }
 
@@ -211,5 +205,11 @@ public class DebitCardPaymentTest {
         paymentPage.PaymentFormat(cardNumber, month, year, owner, cvc);
         paymentPage.wrongFormat();
         paymentPage.emptyField();
+    }
+
+    @AfterAll
+    static void tearDownAll() {
+        SelenideLogger.removeListener("allure");
+        SqlHelper.deleteTables();
     }
 }
