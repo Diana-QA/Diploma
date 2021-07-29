@@ -95,6 +95,10 @@ public class DataHelper {
         return faker.name().fullName();
     }
 
+    public static String getInvalidOwner() {
+        return "8@/1$";
+    }
+
     public static String getEmptyOwner() {
         return "";
     }
