@@ -162,4 +162,47 @@ public class DebitCardPaymentTest {
         paymentPage.validPaymentFormat(cardNumber, month, year, owner, cvc);
         paymentPage.invalidCardExpirationDate();
     }
+
+    @Test
+    void should_Payment_By_Debit_Card_With_Invalid_Owner() {
+        val dashboardPage = new DashboardPage();
+        val paymentPage = new PaymentPage();
+        dashboardPage.getDebitCardPayment();
+        val cardNumber = DataHelper.getApprovedCardNumber();
+        val month = DataHelper.getCorrectMonth();
+        val year = DataHelper.getCorrectYear();
+        val owner = DataHelper.getInvalidOwner();
+        val cvc = DataHelper.getCorrectCVC();
+        paymentPage.validPaymentFormat(cardNumber, month, year, owner, cvc);
+        paymentPage.wrongFormat();
+    }
+
+    @Test
+    void should_Payment_By_Debit_Card_With_Incorrect_CVC() {
+        val dashboardPage = new DashboardPage();
+        val paymentPage = new PaymentPage();
+        dashboardPage.getDebitCardPayment();
+        val cardNumber = DataHelper.getApprovedCardNumber();
+        val month = DataHelper.getCorrectMonth();
+        val year = DataHelper.getCorrectYear();
+        val owner = DataHelper.getValidOwner();
+        val cvc = DataHelper.getIncorrectCVC();
+        paymentPage.validPaymentFormat(cardNumber, month, year, owner, cvc);
+        paymentPage.wrongFormat();
+    }
+
+    @Test
+    void should_Payment_By_Debit_Card_With_Blank_Fields() {
+        val dashboardPage = new DashboardPage();
+        val paymentPage = new PaymentPage();
+        dashboardPage.getDebitCardPayment();
+        val cardNumber = DataHelper.getCardWithoutNumber();
+        val month = DataHelper.getEmptyMonth();
+        val year = DataHelper.getEmptyYear();
+        val owner = DataHelper.getEmptyOwner();
+        val cvc = DataHelper.getEmptyCVC();
+        paymentPage.validPaymentFormat(cardNumber, month, year, owner, cvc);
+        paymentPage.wrongFormat();
+        paymentPage.emptyField();
+    }
 }
