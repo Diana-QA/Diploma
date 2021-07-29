@@ -1,5 +1,6 @@
 package ru.netology.web.test;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import lombok.val;
@@ -8,15 +9,18 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.web.data.DataHelper;
+import ru.netology.web.data.SqlHelper;
 import ru.netology.web.page.DashboardPage;
 import ru.netology.web.page.PaymentPage;
 
 import static com.codeborne.selenide.Selenide.open;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CreditCardPaymentTest {
 
     @BeforeEach
     void setUp() {
+        Configuration.startMaximized = true;
         open("http://localhost:8080");
     }
 
@@ -28,6 +32,7 @@ public class CreditCardPaymentTest {
     @AfterAll
     static void tearDownAll() {
         SelenideLogger.removeListener("allure");
+        SqlHelper.deleteTables();
     }
 
     // POSITIVE SCENARIOS
@@ -42,8 +47,10 @@ public class CreditCardPaymentTest {
         val year = DataHelper.getCorrectYear();
         val owner = DataHelper.getValidOwner();
         val cvc = DataHelper.getCorrectCVC();
+        val paymentStatus = SqlHelper.getStatusCreditRequestEntity();
         paymentPage.PaymentFormat(cardNumber, month, year, owner, cvc);
         paymentPage.successNotification();
+        assertEquals("APPROVED", paymentStatus);
     }
 
     @Test
@@ -56,8 +63,10 @@ public class CreditCardPaymentTest {
         val year = DataHelper.getCorrectYear();
         val owner = DataHelper.getValidOwner();
         val cvc = DataHelper.getCorrectCVC();
+        val paymentStatus = SqlHelper.getStatusCreditRequestEntity();
         paymentPage.PaymentFormat(cardNumber, month, year, owner, cvc);
         paymentPage.successNotification();
+        assertEquals("DECLINED", paymentStatus);
     }
 
     @Test
