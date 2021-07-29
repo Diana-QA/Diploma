@@ -36,7 +36,7 @@ public class DebitCardPaymentTest {
     // POSITIVE SCENARIOS
 
     @Test
-    void should_Payment_Via_Debit_Card_With_Status_Approved() {
+    void should_Payment_By_Debit_Card_With_Status_Approved() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getDebitCardPayment();
@@ -50,7 +50,7 @@ public class DebitCardPaymentTest {
     }
 
     @Test
-    void should_Payment_Via_Debit_Card_With_Status_Declined() {
+    void should_Payment_By_Debit_Card_With_Status_Declined() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getDebitCardPayment();
@@ -64,13 +64,13 @@ public class DebitCardPaymentTest {
     }
 
     @Test
-    void should_Payment_Via_Debit_Card_With_Russian_Owner() {
+    void should_Payment_By_Debit_Card_With_Russian_Owner() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getDebitCardPayment();
         val cardNumber = DataHelper.getApprovedCardNumber();
         val month = DataHelper.getNextMonth();
-        val year = DataHelper.getPlusYear();
+        val year = DataHelper.getCorrectYear();
         val owner = DataHelper.getRussianOwner();
         val cvc = DataHelper.getCorrectCVC();
         paymentPage.validPaymentFormat(cardNumber, month, year, owner, cvc);
@@ -78,7 +78,7 @@ public class DebitCardPaymentTest {
     }
 
     @Test
-    void should_Payment_Via_Debit_Card_With_Chinese_Owner() {
+    void should_Payment_By_Debit_Card_With_Chinese_Owner() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getDebitCardPayment();
@@ -91,5 +91,75 @@ public class DebitCardPaymentTest {
         paymentPage.successNotification();
     }
 
+    // NEGATIVE SCENARIOS
 
+    @Test
+    void should_Payment_By_Debit_Card_With_Invalid_Card_Number() {
+        val dashboardPage = new DashboardPage();
+        val paymentPage = new PaymentPage();
+        dashboardPage.getDebitCardPayment();
+        val cardNumber = DataHelper.getInvalidCardNumber();
+        val month = DataHelper.getCorrectMonth();
+        val year = DataHelper.getCorrectYear();
+        val owner = DataHelper.getValidOwner();
+        val cvc = DataHelper.getCorrectCVC();
+        paymentPage.validPaymentFormat(cardNumber, month, year, owner, cvc);
+        paymentPage.errorNotification();
+    }
+
+    @Test
+    void should_Payment_By_Debit_Card_With_Incorrect_Card_Number() {
+        val dashboardPage = new DashboardPage();
+        val paymentPage = new PaymentPage();
+        dashboardPage.getDebitCardPayment();
+        val cardNumber = DataHelper.getIncorrectCardNumber();
+        val month = DataHelper.getLastMonth();
+        val year = DataHelper.getCorrectYear();
+        val owner = DataHelper.getValidOwner();
+        val cvc = DataHelper.getCorrectCVC();
+        paymentPage.validPaymentFormat(cardNumber, month, year, owner, cvc);
+        paymentPage.wrongFormat();
+    }
+
+    @Test
+    void should_Payment_By_Debit_Card_With_Invalid_Month() {
+        val dashboardPage = new DashboardPage();
+        val paymentPage = new PaymentPage();
+        dashboardPage.getDebitCardPayment();
+        val cardNumber = DataHelper.getApprovedCardNumber();
+        val month = DataHelper.getInvalidMonth();
+        val year = DataHelper.getCorrectYear();
+        val owner = DataHelper.getValidOwner();
+        val cvc = DataHelper.getCorrectCVC();
+        paymentPage.validPaymentFormat(cardNumber, month, year, owner, cvc);
+        paymentPage.invalidCardExpirationDate();
+    }
+
+    @Test
+    void should_Payment_By_Debit_Card_With_Expired_One_Year() {
+        val dashboardPage = new DashboardPage();
+        val paymentPage = new PaymentPage();
+        dashboardPage.getDebitCardPayment();
+        val cardNumber = DataHelper.getApprovedCardNumber();
+        val month = DataHelper.getCorrectMonth();
+        val year = DataHelper.getMinusYear();
+        val owner = DataHelper.getValidOwner();
+        val cvc = DataHelper.getCorrectCVC();
+        paymentPage.validPaymentFormat(cardNumber, month, year, owner, cvc);
+        paymentPage.cardExpired();
+    }
+
+    @Test
+    void should_Payment_By_Debit_Card_With_The_Wrong_Year() {
+        val dashboardPage = new DashboardPage();
+        val paymentPage = new PaymentPage();
+        dashboardPage.getDebitCardPayment();
+        val cardNumber = DataHelper.getApprovedCardNumber();
+        val month = DataHelper.getCorrectMonth();
+        val year = DataHelper.getPlusYear();
+        val owner = DataHelper.getValidOwner();
+        val cvc = DataHelper.getCorrectCVC();
+        paymentPage.validPaymentFormat(cardNumber, month, year, owner, cvc);
+        paymentPage.invalidCardExpirationDate();
+    }
 }
