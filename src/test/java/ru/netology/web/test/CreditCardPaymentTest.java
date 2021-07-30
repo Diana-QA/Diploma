@@ -29,10 +29,16 @@ public class CreditCardPaymentTest {
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
+    @AfterAll
+    static void tearDownAll() {
+        SelenideLogger.removeListener("allure");
+        SqlHelper.deleteTables();
+    }
+
     // POSITIVE SCENARIOS
 
     @Test
-    void should_Payment_By_Debit_Card_With_Status_Approved() {
+    void should_Payment_By_Credit_Card_With_Status_Approved() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getPaymentByCreditCard();
@@ -48,7 +54,7 @@ public class CreditCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Debit_Card_With_Status_Declined() {
+    void should_Payment_By_Credit_Card_With_Status_Declined() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getPaymentByCreditCard();
@@ -58,13 +64,13 @@ public class CreditCardPaymentTest {
         val owner = DataHelper.getValidOwner();
         val cvc = DataHelper.getCorrectCVC();
         paymentPage.PaymentFormat(cardNumber, month, year, owner, cvc);
-        paymentPage.successNotification();
+        paymentPage.errorNotification();
         val paymentStatus = SqlHelper.getStatusCreditRequestEntity();
         assertEquals("DECLINED", paymentStatus);
     }
 
     @Test
-    void should_Payment_By_Debit_Card_With_Russian_Owner() {
+    void should_Payment_By_Credit_Card_With_Russian_Owner() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getPaymentByCreditCard();
@@ -78,7 +84,7 @@ public class CreditCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Debit_Card_With_Chinese_Owner() {
+    void should_Payment_By_Credit_Card_With_Chinese_Owner() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getPaymentByCreditCard();
@@ -94,7 +100,7 @@ public class CreditCardPaymentTest {
     // NEGATIVE SCENARIOS
 
     @Test
-    void should_Payment_By_Debit_Card_With_Invalid_Card_Number() {
+    void should_Payment_By_Credit_Card_With_Invalid_Card_Number() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getPaymentByCreditCard();
@@ -108,7 +114,7 @@ public class CreditCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Debit_Card_With_Incorrect_Card_Number() {
+    void should_Payment_By_Credit_Card_With_Incorrect_Card_Number() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getPaymentByCreditCard();
@@ -122,7 +128,7 @@ public class CreditCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Debit_Card_With_Invalid_Month() {
+    void should_Payment_By_Credit_Card_With_Invalid_Month() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getPaymentByCreditCard();
@@ -136,7 +142,7 @@ public class CreditCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Debit_Card_With_Expired_One_Year() {
+    void should_Payment_By_Credit_Card_With_Expired_One_Year() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getPaymentByCreditCard();
@@ -150,7 +156,7 @@ public class CreditCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Debit_Card_With_The_Wrong_Year() {
+    void should_Payment_By_Credit_Card_With_The_Wrong_Year() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getPaymentByCreditCard();
@@ -164,7 +170,7 @@ public class CreditCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Debit_Card_With_Invalid_Owner() {
+    void should_Payment_By_Credit_Card_With_Invalid_Owner() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getPaymentByCreditCard();
@@ -178,7 +184,7 @@ public class CreditCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Debit_Card_With_Incorrect_CVC() {
+    void should_Payment_By_Credit_Card_With_Incorrect_CVC() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getPaymentByCreditCard();
@@ -192,7 +198,7 @@ public class CreditCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Debit_Card_With_Blank_Fields() {
+    void should_Payment_By_Credit_Card_With_Blank_Fields() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getPaymentByCreditCard();
@@ -204,11 +210,5 @@ public class CreditCardPaymentTest {
         paymentPage.PaymentFormat(cardNumber, month, year, owner, cvc);
         paymentPage.wrongFormat();
         paymentPage.emptyField();
-    }
-
-    @AfterAll
-    static void tearDownAll() {
-        SelenideLogger.removeListener("allure");
-        SqlHelper.deleteTables();
     }
 }
