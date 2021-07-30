@@ -3,7 +3,6 @@ package ru.netology.web.data;
 import lombok.SneakyThrows;
 import lombok.val;
 import org.apache.commons.dbutils.QueryRunner;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -11,7 +10,10 @@ import java.sql.SQLException;
 public class SqlHelper {
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/app", "app", "pass");
+                System.getProperty("url"),
+                System.getProperty("username"),
+                System.getProperty("password")
+                );
     }
 
     @SneakyThrows
@@ -20,9 +22,7 @@ public class SqlHelper {
         val order = "DELETE FROM order_entity";
         val payment = "DELETE FROM payment_entity";
         val runner = new QueryRunner();
-        try (val conn = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/app", "app", "pass"
-        );
+        try (val conn = getConnection();
         ) {
             runner.update(conn, creditRequest);
             runner.update(conn, order);
