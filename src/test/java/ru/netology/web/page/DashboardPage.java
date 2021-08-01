@@ -17,15 +17,15 @@ public class DashboardPage {
         heading.shouldBe(Condition.visible);
     }
 
-    public PaymentPage getDebitCardPayment() {
+    public void getDebitCardPayment() {
         buyButton.click();
         paymentByCard.shouldBe(Condition.visible);
-        return new PaymentPage();
+        new PaymentPage();
     }
 
-    public PaymentPage getPaymentByCreditCard() {
+    public void getPaymentByCreditCard() {
         buyButtonOnCredit.click();
         creditCardData.shouldBe(Condition.visible);
-        return new PaymentPage();
+        new PaymentPage();
     }
 }
