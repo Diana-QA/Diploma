@@ -25,7 +25,7 @@ public class PaymentPage {
     private final SelenideElement cardExpired = $(byText("Истёк срок действия карты"));
     private final SelenideElement emptyField = $(byText("Поле обязательно для заполнения"));
 
-    public void PaymentFormat(DataHelper.CardNumber info, String month, String year, String owner, String cvc) {
+    public void checkPaymentFormat(DataHelper.CardNumber info, String month, String year, String owner, String cvc) {
         cardNumber.setValue(info.getCardNumber());
         monthField.setValue(month);
         yearField.setValue(year);
@@ -34,27 +34,27 @@ public class PaymentPage {
         button.click();
     }
 
-    public void successNotification() {
+    public void checkSuccessNotification() {
         successNotification.shouldBe(Condition.visible, Duration.ofSeconds(15));
     }
 
-    public void errorNotification() {
+    public void checkErrorNotification() {
         errorNotification.shouldBe(Condition.visible, Duration.ofSeconds(15));
     }
 
-    public void wrongFormat() {
+    public void checkWrongFormat() {
         wrongFormat.shouldBe(Condition.visible);
     }
 
-    public void invalidCardExpirationDate() {
+    public void checkInvalidCardExpirationDate() {
         invalidCardExpirationDate.shouldBe(Condition.visible);
     }
 
-    public void cardExpired() {
+    public void verifyCardExpired() {
         cardExpired.shouldBe(Condition.visible);
     }
 
-    public void emptyField() {
+    public void verifyEmptyField() {
         emptyField.shouldBe(Condition.visible);
     }
 }
