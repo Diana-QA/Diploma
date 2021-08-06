@@ -1,3 +1,9 @@
+## **Документация**
+
+* [План автоматизации тестирования](https://github.com/Diana-QA/Diploma/blob/master/documentation/Plan.md)
+* [Отчет по итогам автоматизированного тестирования](https://github.com/Diana-QA/Diploma/blob/master/documentation/Report.md)
+* [Отчет по итогам автоматизации](https://github.com/Diana-QA/Diploma/blob/master/documentation/Summary.md)
+
 ## **Процедура запуска авто-тестов**
 
 ### Перед запуском авто-тестов необходимо установить:
