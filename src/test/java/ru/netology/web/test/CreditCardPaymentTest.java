@@ -38,7 +38,7 @@ public class CreditCardPaymentTest {
     // POSITIVE SCENARIOS
 
     @Test
-    void should_Payment_By_Credit_Card_With_Status_Approved() {
+    void shouldPaymentByCreditCardWithStatusApproved() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getPaymentByCreditCard();
@@ -54,7 +54,7 @@ public class CreditCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Credit_Card_With_Status_Declined() {
+    void shouldPaymentByCreditCardWithStatusDeclined() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getPaymentByCreditCard();
@@ -70,7 +70,7 @@ public class CreditCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Credit_Card_With_Russian_Owner() {
+    void shouldPaymentByCreditCardWithRussianOwner() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getPaymentByCreditCard();
@@ -84,7 +84,7 @@ public class CreditCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Credit_Card_With_Chinese_Owner() {
+    void shouldPaymentByCreditCardWithChineseOwner() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getPaymentByCreditCard();
@@ -100,7 +100,7 @@ public class CreditCardPaymentTest {
     // NEGATIVE SCENARIOS
 
     @Test
-    void should_Payment_By_Credit_Card_With_Invalid_Card_Number() {
+    void shouldPaymentByCreditCardWithInvalidCardNumber() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getPaymentByCreditCard();
@@ -114,7 +114,7 @@ public class CreditCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Credit_Card_With_Incorrect_Card_Number() {
+    void shouldPaymentByCreditCardWithIncorrectCardNumber() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getPaymentByCreditCard();
@@ -128,7 +128,7 @@ public class CreditCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Credit_Card_With_Invalid_Month() {
+    void shouldPaymentByCreditCardWithInvalidMonth() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getPaymentByCreditCard();
@@ -142,7 +142,7 @@ public class CreditCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Credit_Card_With_Expired_One_Year() {
+    void shouldPaymentByCreditCardWithExpiredOneYear() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getPaymentByCreditCard();
@@ -156,7 +156,7 @@ public class CreditCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Credit_Card_With_The_Wrong_Year() {
+    void shouldPaymentByCreditCardWithTheWrongYear() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getPaymentByCreditCard();
@@ -170,7 +170,7 @@ public class CreditCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Credit_Card_With_Invalid_Owner() {
+    void shouldPaymentByCreditCardWithInvalidOwner() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getPaymentByCreditCard();
@@ -184,7 +184,7 @@ public class CreditCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Credit_Card_With_Incorrect_CVC() {
+    void shouldPaymentByCreditCardWithIncorrectCVC() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getPaymentByCreditCard();
@@ -198,7 +198,7 @@ public class CreditCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Credit_Card_With_Blank_Fields() {
+    void shouldPaymentByCreditCardWithBlankFields() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getPaymentByCreditCard();
