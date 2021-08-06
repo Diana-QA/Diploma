@@ -39,7 +39,7 @@ public class DebitCardPaymentTest {
     // POSITIVE SCENARIOS
 
     @Test
-    void should_Payment_By_Debit_Card_With_Status_Approved() {
+    void shouldPaymentByDebitCardWithStatusApproved() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getDebitCardPayment();
@@ -55,7 +55,7 @@ public class DebitCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Debit_Card_With_Status_Declined() {
+    void shouldPaymentByDebitCardWithStatusDeclined() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getDebitCardPayment();
@@ -71,7 +71,7 @@ public class DebitCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Debit_Card_With_Russian_Owner() {
+    void shouldPaymentByDebitCardWithRussianOwner() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getDebitCardPayment();
@@ -85,7 +85,7 @@ public class DebitCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Debit_Card_With_Chinese_Owner() {
+    void shouldPaymentByDebitCardWithChineseOwner() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getDebitCardPayment();
@@ -101,7 +101,7 @@ public class DebitCardPaymentTest {
     // NEGATIVE SCENARIOS
 
     @Test
-    void should_Payment_By_Debit_Card_With_Invalid_Card_Number() {
+    void shouldPaymentByDebitCardWithInvalidCardNumber() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getDebitCardPayment();
@@ -115,7 +115,7 @@ public class DebitCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Debit_Card_With_Incorrect_Card_Number() {
+    void shouldPaymentByDebitCardWithIncorrectCardNumber() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getDebitCardPayment();
@@ -129,7 +129,7 @@ public class DebitCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Debit_Card_With_Invalid_Month() {
+    void shouldPaymentByDebitCardWithInvalidMonth() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getDebitCardPayment();
@@ -143,7 +143,7 @@ public class DebitCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Debit_Card_With_Expired_One_Year() {
+    void shouldPaymentByDebitCardWithExpiredOneYear() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getDebitCardPayment();
@@ -157,7 +157,7 @@ public class DebitCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Debit_Card_With_The_Wrong_Year() {
+    void shouldPaymentByDebitCardWithTheWrongYear() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getDebitCardPayment();
@@ -171,7 +171,7 @@ public class DebitCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Debit_Card_With_Invalid_Owner() {
+    void shouldPaymentByDebitCardWithInvalidOwner() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getDebitCardPayment();
@@ -185,7 +185,7 @@ public class DebitCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Debit_Card_With_Incorrect_CVC() {
+    void shouldPaymentByDebitCardWithIncorrectCVC() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getDebitCardPayment();
@@ -199,7 +199,7 @@ public class DebitCardPaymentTest {
     }
 
     @Test
-    void should_Payment_By_Debit_Card_With_Blank_Fields() {
+    void shouldPaymentByDebitCardWithBlankFields() {
         val dashboardPage = new DashboardPage();
         val paymentPage = new PaymentPage();
         dashboardPage.getDebitCardPayment();
