@@ -40,16 +40,8 @@ public class DataHelper {
 
     // Testing a month
 
-    public static String getCorrectMonth() {
-        return LocalDate.now().format(DateTimeFormatter.ofPattern("MM"));
-    }
-
-    public static String getNextMonth() {
-        return LocalDate.now().plusMonths(1).format(DateTimeFormatter.ofPattern("MM"));
-    }
-
-    public static String getLastMonth() {
-        return LocalDate.now().minusMonths(3).format(DateTimeFormatter.ofPattern("MM"));
+    public static String getMonth(Integer i) {
+        return LocalDate.now().plusMonths(i).format(DateTimeFormatter.ofPattern("MM"));
     }
 
     public static String getInvalidMonth() {
@@ -62,16 +54,8 @@ public class DataHelper {
 
     // Testing year
 
-    public static String getCorrectYear() {
-        return LocalDate.now().format(DateTimeFormatter.ofPattern("yy"));
-    }
-
-    public static String getPlusYear() {
-        return LocalDate.now().plusYears(7).format(DateTimeFormatter.ofPattern("yy"));
-    }
-
-    public static String getMinusYear() {
-        return LocalDate.now().minusYears(1).format(DateTimeFormatter.ofPattern("yy"));
+    public static String getYear(Integer i) {
+        return LocalDate.now().plusYears(i).format(DateTimeFormatter.ofPattern("yy"));
     }
 
     public static String getEmptyYear() {
