@@ -18,13 +18,13 @@
 
 ### [**Отчет Gradle:**](http://localhost:63342/diploma/build/reports/tests/test/index.html?_ijt=8shcm323j26tamtn972jodh8h8)
 
-![](file:///C:/Users/Diana/OneDrive/%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BA%D0%B8%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0/4664373.png)
+![4664373](https://user-images.githubusercontent.com/79462466/128639359-19b2b84e-25e3-4707-9d63-153489689429.png)
 
 ### [**Отчет Allure:**](http://localhost:63342/diploma/build/reports/allure-report/index.html?_ijt=sphqs0ghl3bhbu8hnc3e7jhgdm#)
 
-![](file:///C:/Users/Diana/OneDrive/%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BA%D0%B8%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0/64577%20(2).png)
+![64577 (2)](https://user-images.githubusercontent.com/79462466/128639367-74f5c357-b297-42f4-8553-80d2f32c4c19.png)
 
-![](file:///C:/Users/Diana/OneDrive/%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BA%D0%B8%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0/5767.png)
+![5767 (2)](https://user-images.githubusercontent.com/79462466/128639415-038544e3-fe14-4180-9600-d129c522122d.png)
 
 ### **Общие рекомендации**
 
