@@ -45,7 +45,7 @@ gradlew clean test -Durl=jdbc:postgresql://localhost:5433/app
 4. Сгенерировать отчеты двумя командами:
 
 ```
-gradlew clean test allureReport
+gradlew allureReport
 ```
 
 ```
