@@ -4,9 +4,23 @@
 
 Автоматизация тестирования выполнялась с использованием следующих инструментов:
 
-* **Junit 5** (`testImplementation 'org.junit.jupiter:junit-jupiter:5.7.2'`)
-* **Selenide** (`testImplementation 'com.codeborne:selenide:5.23.0'`) 
-* **Allure** (`testImplementation 'io.qameta.allure:allure-selenide:2.14.0'`)
+* **Junit 5** 
+
+```
+ testImplementation 'org.junit.jupiter:junit-jupiter:5.7.2'
+```
+
+* **Selenide** 
+
+```
+testImplementation 'com.codeborne:selenide:5.23.0'
+```
+
+* **Allure** 
+
+```
+testImplementation 'io.qameta.allure:allure-selenide:2.14.0'
+```
 
 Для работы с БД и симулятором банковских сервисов использовался [Docker](https://www.docker.com/products/docker-desktop)
 
@@ -16,11 +30,11 @@
 * Успешных: *20 (83.33%)*
 * Неуспешных: *4 (16.67%)*
 
-### [**Отчет Gradle:**](http://localhost:63342/diploma/build/reports/tests/test/index.html?_ijt=8shcm323j26tamtn972jodh8h8)
+### **Отчет Gradle:**
 
 ![4664373](https://user-images.githubusercontent.com/79462466/128639359-19b2b84e-25e3-4707-9d63-153489689429.png)
 
-### [**Отчет Allure:**](http://localhost:63342/diploma/build/reports/allure-report/index.html?_ijt=sphqs0ghl3bhbu8hnc3e7jhgdm#)
+### **Отчет Allure:**
 
 ![64577 (2)](https://user-images.githubusercontent.com/79462466/128639367-74f5c357-b297-42f4-8553-80d2f32c4c19.png)
 
