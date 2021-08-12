@@ -64,6 +64,3 @@ testImplementation 'io.qameta.allure:allure-selenide:2.14.0'
 
 [10. Неподходящее название в заголовке страницы](https://github.com/Diana-QA/Diploma/issues/1)
 
-Рекомендации по улучшению интерфейса:
-
-- 
