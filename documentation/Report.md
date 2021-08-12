@@ -56,7 +56,7 @@ testImplementation 'io.qameta.allure:allure-selenide:2.14.0'
 
 [6. Неполная валидация поля "Месяц"](https://github.com/Diana-QA/Diploma/issues/5)
 
-[7. Падение веб-приложения при отправке некорректным значением поля "Номер карты"](https://github.com/Diana-QA/Diploma/issues/4)
+[7. Падение веб-сервера при отправке некорректным значением поля "Номер карты"](https://github.com/Diana-QA/Diploma/issues/4)
 
 [8. Неправильное поведение отображения сообщения об ошибке под полем ввода после исправления](https://github.com/Diana-QA/Diploma/issues/3)
 
