@@ -44,16 +44,26 @@ testImplementation 'io.qameta.allure:allure-selenide:2.14.0'
 
 #### **Issue заведено `10`:**
 
-1. [Сумма оплаты тура в базе данных при оплате отличается](https://github.com/Diana-QA/Diploma/issues/10)
-2. [Отображение кредитной истории в базе данных при оплате в кредит не записывается](https://github.com/Diana-QA/Diploma/issues/9)
-3. [Операция проходит успешно при отправке карты со статусом DECLINED](https://github.com/Diana-QA/Diploma/issues/8)
-4. [Отсутствует валидация поля "Владелец"](https://github.com/Diana-QA/Diploma/issues/7)
-5. [Неполная валидация поля "CVC/CVV"](https://github.com/Diana-QA/Diploma/issues/6)
-6. [Неполная валидация поля "Месяц"](https://github.com/Diana-QA/Diploma/issues/5)
-7. [Падение веб-приложения при отправке некорректным значением поля "Номер карты"](https://github.com/Diana-QA/Diploma/issues/4)
-8. [Неправильное поведение отображения сообщения об ошибке под полем ввода после исправления](https://github.com/Diana-QA/Diploma/issues/3)
-9. [Двойное уведомление при отправке запроса с не валидным номером карты](https://github.com/Diana-QA/Diploma/issues/2)
-10. [Неподходящее название в заголовке страницы](https://github.com/Diana-QA/Diploma/issues/1)
+[1. Сумма оплаты тура в базе данных при оплате отличается](https://github.com/Diana-QA/Diploma/issues/10)
+
+[2. Отображение кредитной истории в базе данных при оплате в кредит не записывается](https://github.com/Diana-QA/Diploma/issues/9)
+
+[3. Операция проходит успешно при отправке карты со статусом DECLINED](https://github.com/Diana-QA/Diploma/issues/8)
+
+[4. Отсутствует валидация поля "Владелец"](https://github.com/Diana-QA/Diploma/issues/7)
+
+[5. Неполная валидация поля "CVC/CVV"](https://github.com/Diana-QA/Diploma/issues/6)
+
+[6. Неполная валидация поля "Месяц"](https://github.com/Diana-QA/Diploma/issues/5)
+
+[7. Падение веб-приложения при отправке некорректным значением поля "Номер карты"](https://github.com/Diana-QA/Diploma/issues/4)
+
+[8. Неправильное поведение отображения сообщения об ошибке под полем ввода после исправления](https://github.com/Diana-QA/Diploma/issues/3)
+
+[9. Двойное уведомление при отправке запроса с не валидным номером карты](https://github.com/Diana-QA/Diploma/issues/2)
+
+[10. Неподходящее название в заголовке страницы](https://github.com/Diana-QA/Diploma/issues/1)
 
 Рекомендации по улучшению интерфейса:
 
+- 
