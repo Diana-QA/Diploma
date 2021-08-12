@@ -27,7 +27,7 @@ java -Dspring.datasource.url=jdbc:mysql://localhost:3306/app -jar artifacts/aqa-
 на СУБД PostgreSQL командой:
 
 ```
-java -Dspring.datasource.url=jdbc:postgresql://localhost:5433/app -jar artifacts/aqa-shop.jar
+java -Dspring.datasource.url=jdbc:postgresql://localhost:5432/app -jar artifacts/aqa-shop.jar
 ```
 
 3. В новом терминале запустить авто-тесты командой для MySQL:
@@ -39,7 +39,7 @@ gradlew clean test -Durl=jdbc:mysql://localhost:3306/app
 для PostgreSQL:
 
 ```
-gradlew clean test -Durl=jdbc:postgresql://localhost:5433/app
+gradlew clean test -Durl=jdbc:postgresql://localhost:5432/app
 ```
 
 4. Сгенерировать отчеты двумя командами:
